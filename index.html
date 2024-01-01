@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="logo">
+                    <h2>Weather App</h2>
+                </div>
+                <span id="span"></span>
+                
+                <div class="contact">
+                    <button onclick="openPopup()">github</button>
+                    <button onclick="openInfo()">About</button>
+                </div>
+    
+            </div>
+
+            <!-- main container -->
+            <div class="main-container">
+                <div class="your-location">
+                    <div class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <h2>Grant Location Access</h2>
+                        <p>Allow Access for get weather information</p>
+                        <button grant-location>GRANT ACCESS</button>
+                    </div>
+                    
+                    <div class="currentWeather">
+                        <div class="name">
+                            <p data-Name></p>
+                        <img data-Icon>
+                        </div>
+    
+                        <!-- weather description -->
+                        <p data-Desc></p>
+                        <img data-Icon2>
+    
+                        <!-- temperature -->
+                        <p data-temperature></p>
+
+                        <div class="another-info">
+                            <div class="info">
+                                <img datai0>
+                                <p info0></p>
+                                <p wind></p>
+                            </div>
+
+                            <div class="info">
+                                <img datai1>
+                                <p info1></p>
+                                <p humidity></p>
+                            </div>
+                            
+                            <div class="info">
+                                <img datai2>
+                                <p info2></p>
+                                <p cloud></p>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="search-location">
+                    <form class="search-box" id="shake">
+                        <input type="text" id="searchText"  placeholder="search location...">
+                        <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+
+                     <!-- for error handling -->
+                     <div class="show-error">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span city-data></span>
+                        <p para4></p>
+                    </div>
+                
+                         <!-- initial highlights -->
+                         <div class="highlights">
+                            <p>search for <a href="">"mumbai"</a>,<a href="">"Delhi"</a>,<a href="">"Lucknow"</a></p>
+                            <p>search for <a href="">"New york"</a>,<a href="">"California"</a>,<a href="">"Texas"</a></p>
+                        </div>
+    
+
+                <div class="weather-container">
+                    <!-- city name and flag -->
+                    <div class="name">
+                        <p data-cityName></p>
+                    <img data-countryIcon>
+                    </div>
+
+                    <!-- weather description -->
+                    <p data-weatherDesc></p>
+                    <img data-weatherIcon>
+
+                    <!-- temperature -->
+                    <p data-temp></p>
+                    
+               
+                   
+
+                    <!-- weather description -->
+                    <div class="parameter-container">
+
+                        <!-- card1 -->
+                        <div class="parameter">
+                            <img data1>
+                            <p para1 ></p>
+                            <p data-windspeed></p>
+                        </div>
+
+                        <div class="parameter">
+                            <img data2>
+                            <p para2></p>
+                            <p data-humidity></p>
+                        </div>
+
+                        <div class="parameter">
+                            <img data3>
+                            <p para3></p>
+                            <p data-cloudiness></p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+        <div class="popup-menu">
+            <span onclick="closeDiv()">X</span>
+            <i class="fa-brands fa-github"></i>
+            <h3>Do you want to visit my amazing profile</h3>
+            <button><a href="https://github.com/ujjwalsha">Yes</a></button>
+        </div>
+
+
+        <div class="owner-popup">
+            <img src="assets/profiles.JPG" alt="profiles">
+            <p>Hi Everyone, I'm ujjwal kumar and i am pursuing BCA from <br> Lucknow public college of professional studies. By the way,<br> I'm currently learning Full Stack Web Development and this makes me very excited. </p>
+            <button onclick="closeButton()">Close</button>
+        </div>
+        
+    </div>
+    <script src="app/script.js"></script>
+</body>
+</html>

@@ -74,8 +74,13 @@
                 </div>
                 <div class="search-location">
                     <form class="search-box" id="shake">
-                        <input type="text" id="searchText"  placeholder="search location...">
+                        
+                    <i class="fa-solid fa-arrow-left back"></i>
+                      
+                            <input type="text" id="searchText"  placeholder="search location...">
                         <button class="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    
+                        
                     </form>
 
                      <!-- for error handling -->
@@ -87,8 +92,8 @@
                 
                          <!-- initial highlights -->
                          <div class="highlights">
-                            <p>search for <a href="">"mumbai"</a>,<a href="">"Delhi"</a>,<a href="">"Lucknow"</a></p>
-                            <p>search for <a href="">"New york"</a>,<a href="">"California"</a>,<a href="">"Texas"</a></p>
+                           <p>Search For<button><a onclick="searchFor(sasaram)" id="sasaram">"Sasaram"</a></button>,<button><a onclick="searchFor(mumbai)" id="mumbai">"mumbai"</a></button>,<button><a onclick="searchFor(lucknow)" id="lucknow">"Lucknow"</a></button></p>
+                           <p>Search For <button><a onclick="searchFor(england)" id="england">"England"</a></button>,<button><a onclick="searchFor(dubai)" id="dubai">"Dubai"</a></button>,<button><a onclick="searchFor(newyork)" id="newyork">"New york"</a></button></p>
                         </div>
     
 

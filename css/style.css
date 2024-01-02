@@ -297,7 +297,7 @@ body{
 
 
 .search-location{
-    width: 50%;
+    width: 55%;
     border-radius: 1em;
     height: 100%;
     display: block;
@@ -309,13 +309,37 @@ body{
 
 .search-box{
     /* border: 1px solid coral; */
-    width: 70%;
+    width: 90%;
     margin: 1em auto;
     height: 10%;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     gap: 0.5em;
     
 }
+.back{
+    font-size: 1.4em;
+    font-weight: bold;
+    display: none;
+    cursor: pointer;
+    padding: 0.5em;
+    border-radius: 100%;
+    background: #5D5FFC;
+    align-items: center;
+    /* transition: all 0.1s ease-in; */
+    transition: transform 0.2s;
+}
+
+i:hover{
+    /* background: #7173ff; */
+    transform: scale(1.09);
+    /* transform: translateX(-10px); */
+
+
+}
+
+
 
 .error{
     animation:shake 0.3s linear 10;
@@ -376,7 +400,8 @@ body{
     height: 100%;
     font-weight: bold;
     font-size: 1em;
-    width: 85%;
+    margin-right: -1.8em;
+    width: 70%;
     padding: 1em;
     color: blanchedalmond;
     border-radius: 1em;
@@ -384,10 +409,13 @@ body{
 
 .search-box button{
     width: 10%;
+
     background: transparent;
     border: 2px solid blanchedalmond;
     border-radius: 1em;
     font-size: 1.35em;
+    /* gap: 1em; */
+    height: 100%;
     cursor: pointer;
     color: blanchedalmond;
     /* border: 1px solid blanchedalmond; */
@@ -485,8 +513,25 @@ body{
 }
 
 
-.highlights p a{
+
+.highlights a{
     text-decoration: none;
+}
+
+.highlights button{
+    appearance: none;
+    background: transparent;
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    /* border-bottom: 1px solid blanchedalmond; */
+    color: #0106ff;
+}
+
+.highlights button:hover{
+    text-decoration: underline;
+    color: #0106ff;
 }
 
 .show-error{

@@ -1,5 +1,5 @@
 let popupMenu = document.querySelector('.popup-menu');
-
+let backButton = document.querySelector('.back');
 function closeDiv(){
     console.log("you are entered");
     popupMenu.style.display = "none";
@@ -18,12 +18,8 @@ function openInfo(){
 
 }
 
-let searchArea = document.querySelector('.search-box');
-setInterval(() => {    
-    searchArea.classList.add('shakeness');
-    
-}, 2000);
 
+// for show the current time 
 let span = document.getElementById('span');
 function time(){
     var d = new Date();
@@ -34,25 +30,21 @@ function time(){
 setInterval(time, 1000);
 
 
-searchArea.classList.remove('shakeness');
-
 let weatherContainer = document.querySelector('.weather-container');
 let inputBox = document.getElementById('searchText');
 let search = document.querySelector('.search');
 let grantlocationContainer = document.querySelector('.your-location');
 
-
 let currenttab = inputBox;
-
 const API_KEY = "7ddbaa782b57e4b7c27e67abb76a480b";
 
 
+// fetch data for current location that user have
 function getfromSessionStorage(){
     const localCordinates = sessionStorage.getItem('user-cordinates');
 
     if(!localCordinates)
-    {
-        // grantlocationContainer.classList.add("active");   
+    {   
         grantlocationContainer.style.display = "none";     
     }
     else{
@@ -64,10 +56,9 @@ function getfromSessionStorage(){
 }
 
 const currentWeather = document.querySelector('.currentWeather');
-
 async function fetchUserWeatherInfo(coordinates){
     const {lat, lon} = coordinates;
-    // grantlocationContainer.classList.remove("active");
+
     console.log("you are in fetchuserweather");
     // make loader visible
     
@@ -87,7 +78,7 @@ async function fetchUserWeatherInfo(coordinates){
 
 }
 
-
+// for render the current weather data 
 function renderCurrent(data)
 {
     const name = document.querySelector("[data-Name]");
@@ -128,13 +119,11 @@ function renderCurrent(data)
 }  
 
 
-
-
-
-
 const grantAccessButton = document.querySelector('[grant-location]');
 const grantLocation = document.querySelector(".location");
 
+
+// function by which can get location from browser
 function getLocation(){
     if(navigator.geolocation)
     {
@@ -147,6 +136,7 @@ function getLocation(){
     }
 }
 
+// to show the exact location with longitude and latitude
 function showPosition(position)
 {
     const userCoordinates = {
@@ -163,11 +153,11 @@ function showPosition(position)
     console.log('you are in showposition');
 }
 
-
+// button grant location from user
 grantAccessButton.addEventListener("click", getLocation);
 
 
-
+//render the user searched location 
 
 function renderWeatherInfo(weatherInfo){
 
@@ -195,7 +185,6 @@ function renderWeatherInfo(weatherInfo){
     desc.innerText = weatherInfo?.weather?.[0]?.description;
    weatherIcon.src = `https://openweathermap.org/img/w/${weatherInfo?.weather?.[0]?.icon}.png`;
    weatherIcon.style.height = "4em";
-//    weatherTemp.innerText = `${weatherInfo?.main?.temp.toFixed(2) - 273} °C`;
    windSpeed.innerText = `${weatherInfo?.wind?.speed} m/s`;
    let value = `${weatherInfo?.main?.temp.toFixed(2) - 273}`;
     weatherTemp.innerText = parseInt(value) + '°C';
@@ -217,10 +206,46 @@ function renderWeatherInfo(weatherInfo){
 const searchForm = document.querySelector('.search-box');
 const icon = document.querySelector('.parameter-container');
 const highlights = document.querySelector('.highlights');
+const sasaram = document.getElementById('sasaram');
+const mumbai = document.getElementById('mumbai');
+const lucknow = document.getElementById('lucknow');
+const england = document.getElementById('england');
+const dubai = document.getElementById('dubai');
+const newyork = document.getElementById('newyork');
+
+// console.log(mumbai.textContent);
+function searchFor(mumbai){
+    let city = mumbai.innerHTML;
+    backButton.style.display = "flex";
+    
+    let n = city.length-1;
+    let name = city.substring(1, n);
+
+    fetchSearchWeatherInfo(name);
+    highlights.style.display = "none";
+    inputBox.value = city.substring(1, n);
+}
+
+
+// back button
+backButton.addEventListener("click", () =>{
+    console.log("this is ");
+    highlights.style.display = "flex";
+    weatherContainer.style.display = "none";
+    inputBox.value = "";
+backButton.style.display = "none";
+showError.style.display = "none"; 
+
+
+});
+
+
 searchForm.addEventListener('submit', (e) =>{
     e.preventDefault();
     let cityName = inputBox.value;
     
+    // console.log(cityName);
+
     if(cityName.length === 0)
     {
         searchText.classList.add('error');
@@ -230,7 +255,10 @@ searchForm.addEventListener('submit', (e) =>{
     }
     else{
         fetchSearchWeatherInfo(cityName);
+        // fetchSearchWeatherInfo(mumbai.innerText);
         icon.style.display = "flex";
+    backButton.style.display = "flex";
+
         highlights.style.display = "none";
     }
 });
@@ -241,40 +269,28 @@ const dataShow = document.querySelector('[city-data]');
 
 async function fetchSearchWeatherInfo(city){
     // adding loader
-    // grantaccesscontainer removed
     console.log("are you in fetchsearch");
 
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=matric`);
         const data = await response.json();
 
-    
-
     if(data.cod === "404")
     {
-        
         showError.style.display = "flex";  
         dataShow.innerText = " " + city;
         dataShow.style.color = "#47E975";
-        para4.innerText = "The country you typed really exist? \n kindly Google.";
-        
+        para4.innerText = "The country you typed really exist? \n kindly Google.";   
         weatherContainer.style.display = "none";
     }
-
     else
     {
-        
-
         showError.style.display = "none"; 
         weatherContainer.style.display = "grid";
-        // active loader screen
-        // fetchUserWeatherInfo.classList.add("active");
-        // renderWeatherInfo(data);
+    
         console.log(data);
         renderWeatherInfo(data);
 
-    }
-        
-      
+    }      
 }
 
 

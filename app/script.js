@@ -21,10 +21,12 @@ function openInfo(){
 
 // for show the current time 
 let span = document.getElementById('span');
+let span1 = document.getElementById('span1');
 function time(){
     var d = new Date();
     let value = d.toLocaleTimeString();
     span.textContent = value;
+    span1.textContent = value;
 }
 
 setInterval(time, 1000);

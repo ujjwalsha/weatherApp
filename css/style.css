@@ -23,7 +23,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    /* border: 2px solid blanchedalmond; */
+    border: 2px solid blanchedalmond;
     color: var(--text-color);
 
     @media (max-width: 480px){
@@ -42,6 +42,10 @@ body{
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     /* background: rgb(190, 190, 190); */
     border: 0.5px solid blanchedalmond;
+
+    @media (max-width: 480px) {
+        width: 102%;
+    }
 }
 
 .container::before{
@@ -121,7 +125,10 @@ body{
     border-radius: 0.5em;
 }
 
+
+
 .popup-menu{
+    /* position: absolute; */
     border: 1px solid var(--text-color);
     width: fit-content;
     border-radius: 1em;
@@ -138,14 +145,32 @@ body{
     background: var(--background);
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
     gap: 2em;
+
+    @media (max-width: 480px){
+        width: 85%;
+        padding: 1em;
+    }
 }
 
-.popup-menu p{
+.popup-menu h3{
     cursor: pointer;
+    @media (max-width:480px){
+        text-align: center;
+    }
 }
 
 .popup-menu span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+    /* text-align: center; */
+    padding: 0.5em;
+    font-size: 1em;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: 1px solid blanchedalmond;
 }
 
 .popup-menu:nth-child(1){
@@ -167,6 +192,10 @@ body{
     border: 1px solid blanchedalmond;
     border-radius: 1em;
     color: blanchedalmond;
+
+    @media (max-width: 480px){
+        padding: 2%;
+    }
 }
 
 .popup-menu i{
@@ -187,6 +216,17 @@ body{
     height: 80%;
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 480px){
+        display: grid;
+        align-items: center;
+        gap: 1em;
+        
+        /* border: 1px solid coral; */
+        width: 90%;
+        margin: 0 auto;
+        justify-content: center;
+    }
 }
 
 .your-location{
@@ -202,6 +242,11 @@ body{
     background: linear-gradient(50deg, #5D5FFC 50%, #47E975 180%);
     
     /* border: 1px solid blanchedalmond; */
+    @media (max-width: 480px) {
+        margin: 0 auto;
+        margin-top: 1em;
+        width: 95%;
+    }
 }
 
 .location{
@@ -212,11 +257,16 @@ body{
     justify-content: center;
     align-items: center;
 
+    @media (max-width: 480px){
+        font-size: 0.6em;
+    }
+
 }
 
 .your-location i{
     font-size: 5em;
 
+    
 }
 
 .currentWeather{
@@ -288,6 +338,10 @@ body{
     font-weight: bold;
     cursor: pointer;
     border: 1px solid blanchedalmond;
+
+    @media (max-width: 480px){
+        font-size: 1.2em;
+    }
 }
 
 .your-location button:hover{
@@ -305,6 +359,11 @@ body{
     justify-content: center;
     align-items: center;
     /* border: 1px solid coral; */
+
+    @media (max-width : 480px){
+        margin: 0 auto;
+        width: 95%;   
+    }
 }
 
 .search-box{
@@ -316,6 +375,13 @@ body{
     justify-content: space-evenly;
     align-items: center;
     gap: 0.5em;
+    
+    @media (max-width: 480px){
+        width: 100%;
+        height: 15%;
+        gap: 0.8em;
+        color: blanchedalmond;
+    }
     
 }
 .back{
@@ -421,11 +487,16 @@ i:hover{
     /* border: 1px solid blanchedalmond; */
     background: var(--background);
 
+    @media (max-width : 480px){
+        width: 15%;
+        font-size: 1.2em;   
+    }
 }
 
 .search-box input::placeholder{
     font-weight: bold;
     font-size: 1em;
+    color: blanchedalmond;
 }
 
 .weather-container{
@@ -435,6 +506,10 @@ i:hover{
     gap: 1em;
     place-content: center;
     place-items: center;
+    /* border: 1px solid coral; */
+    @media (max-width : 480px){
+        width: 100%;
+    }
 }
 
 .name{
@@ -449,6 +524,22 @@ i:hover{
 #span{
     font-size: 2em;
     font-weight: bold;
+    @media (max-width:480px){
+        display: none;
+        font-size: 1.5em;
+        justify-content: center;
+        /* text-transform: lowercase; */
+    }
+}
+
+#span1{
+    display: none;
+    @media(max-width: 480px){
+        font-size: 1.5em;
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+    }
 }
 
 
@@ -497,6 +588,13 @@ i:hover{
     justify-content: center;
     align-items: center;
     /* border: 1px solid coral; */
+
+    @media (max-width: 480px){
+        /* font-size: 1em; */
+    
+        /* display: grid; */
+        /* position: relative; */
+    }
 }
 
 .highlights p{
@@ -504,18 +602,39 @@ i:hover{
     padding: 0.5em 0.5em;
     font-size: 1.2em;
     border-radius: 1em;
-    border: 1px solid ;
+    border: 1px solid blanchedalmond;
     width: 70%;
     display: flex;
     justify-content: center;
     color: blanchedalmond;
     font-weight: bold;
+    
+    @media (max-width: 480px){
+        width: 100%;
+        height: 15%;
+        /* margin: none; */
+        /* width: fit-content; */
+        font-size: 1em;
+        overflow: hidden;
+        /* border: 1px solid coral; */
+        /* border: none; */
+    }
+}
+
+.high{
+    @media (max-width: 480px){
+        /* font-size: 0.2em; */
+    }
 }
 
 
 
 .highlights a{
     text-decoration: none;
+
+    @media (max-width: 480px){
+        
+    }
 }
 
 .highlights button{
@@ -527,6 +646,12 @@ i:hover{
     cursor: pointer;
     /* border-bottom: 1px solid blanchedalmond; */
     color: #0106ff;
+
+    @media (max-width: 480px){
+        /* font-size: 1em; */
+    
+    }
+
 }
 
 .highlights button:hover{
@@ -578,6 +703,10 @@ i:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 480px){
+        width: 85%;
+    }
 }
 
 .owner-popup img{
@@ -587,6 +716,10 @@ i:hover{
     padding: 0.4em;
     border-radius: 20%;
     border: 3px solid blanchedalmond;
+
+    @media (max-width: 480px){
+        width: 43vw;
+    }
 }
 
 
@@ -610,6 +743,10 @@ i:hover{
     border: 1px solid blanchedalmond;
     border-radius: 1em;
     color: blanchedalmond;
+
+    @media (max-width:480px){
+        width: 30%;
+    }
 }
 
 .owner-popup button:hover{

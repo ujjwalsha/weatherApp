@@ -1,3 +1,4 @@
+'use strict';
 let popupMenu = document.querySelector('.popup-menu');
 let backButton = document.querySelector('.back');
 function closeDiv(){
@@ -298,6 +299,46 @@ async function fetchSearchWeatherInfo(city){
 
     }      
 }
+
+let obj = window.matchMedia("(max-width :480px)");
+
+function responsive(obj){
+    if(obj.matches)
+    {
+        popupMenu.style.background = "linear-gradient(45deg, #5D5FFC 40%, #47E975 120%)";
+
+    }
+    else{
+        popupMenu.style.background = "linear-gradient(45deg, #5D5FFC 40%, #47E975 120%)";
+    }
+}
+
+responsive(obj);
+
+obj.addEventListener("change", function(){
+    responsive(obj);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

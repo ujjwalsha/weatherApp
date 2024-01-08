@@ -18,7 +18,7 @@ function openInfo(){
 
 }
 
-
+let loader = document.querySelector('.loader');
 // for show the current time 
 let span = document.getElementById('span');
 let span1 = document.getElementById('span1');
@@ -118,6 +118,7 @@ function renderCurrent(data)
     imgi0.src = "assets/Wind.svg";
     imgi1.src = "assets/Drop.svg";
     imgi2.src = "assets/CloudRain.svg";
+    loader.style.display = "none";
 }  
 
 
@@ -130,12 +131,16 @@ function getLocation(){
     if(navigator.geolocation)
     {
         navigator.geolocation.getCurrentPosition(showPosition);
+        // grantLocation.style.display = "none";
 
     }
     else{
-
         grantAccessButton.style.display = "none";
+        grantLocation.style.display = "flex";
     }
+    
+
+    
 }
 
 // to show the exact location with longitude and latitude
@@ -150,8 +155,7 @@ function showPosition(position)
     fetchUserWeatherInfo(userCoordinates);
     
     grantLocation.style.display = "none";
-
-
+    loader.style.display = "inline-block";
     console.log('you are in showposition');
 }
 
